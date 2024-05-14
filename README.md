@@ -1,1 +1,0 @@
-Assignments of MJ_University

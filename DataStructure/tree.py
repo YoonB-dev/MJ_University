@@ -48,4 +48,3 @@ n5.right = n8
 #inorder(n1)
 postorder(n1)
 #preorder(n1)
-        

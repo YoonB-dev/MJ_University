@@ -55,6 +55,46 @@ def insertTree(data):
                 break
             current = current.right
 
+
+def deleteTree(data):
+    global root
+    if searchTree(data)==False:
+        print("No exist" + str(data))
+        return
+    parent = None
+    current = root
+    while True:
+        if current.data == data:
+            if current.left == None and current.right == None:
+                if parent.left == current:
+                    parent.left = None
+                else:
+                    parent.right = None
+                del(current)
+            else:
+                if current.left!=None and current.right==None:
+                    if parent.left == current:
+                        parent.left = current.left
+                    else:
+                        parent.right = current.left
+                    del(current)
+                else:
+                    if current.left ==None and current.right!=None:
+                        if parent.left == current:
+                            parent.left = current.right
+                        else:
+                            parent.right = current.right
+                        del(current)
+            break
+        else:
+            parent = current
+            if current.data > data:
+                current = current.left
+            else :
+                current= current.right
+                
+
+
 def inorder(n):
     if n == None:
         return
@@ -72,7 +112,7 @@ n2.left = n4
 root = n1
 
 insertTree(13)
-
+deleteTree(70)
 inorder(root)
 
 #searchTree(60)

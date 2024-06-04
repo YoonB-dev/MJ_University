@@ -1,26 +1,18 @@
-#Heap
-from queue import PriorityQueue
-
-class Heap:
+#heap
+class MyHeap:   
     def __init__(self):
         self.heap = []
         self.heap.append(None)
+    
+    def myInsert(self,data):
+        self.heap.append(data)
+    
+    def compareWithParent(self,i):
+        while i//2 > 0:
+            if self.heap[i] > self.heap[i//2]:
+                self.heap[i], self.heap[i//2] = self.heap[i//2], self.heap[i]
+            i = i//2
 
 
-Q1 = PriorityQueue()
-
-Q1.put(10)
-Q1.put(1)
-Q1.put(5)
-Q1.put(3)
-
-Q2 = PriorityQueue()
-Q2.put((5,'Lee'))
-Q2.put((10,'Yoon'))
-
-print(Q1.get())
-print(Q1.get())
-print(Q1.get())
-print(Q2.get())
-print(Q2.get()[1])
-#------------------------------
+heap = MyHeap()
+heap.myInsert(10)

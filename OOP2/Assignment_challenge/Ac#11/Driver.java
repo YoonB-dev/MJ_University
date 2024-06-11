@@ -1,10 +1,10 @@
 import java.util.*;
 
 class DivideByZeroException extends Exception {
-    public DivideByZeroException() {
+    DivideByZeroException() {
         super("0혹은 0 에 아주 가까운 값으로 나누려고 시도하여 프로그램이 중단되었습니다.");
     }
-    public DivideByZeroException(String message) {
+    DivideByZeroException(String message) {
         super(message);
     }
 }
@@ -41,25 +41,25 @@ class Calculator {
         while (true) {
             num = sc.nextLine();
             if (num.equalsIgnoreCase("e")) break;
-
+            
             operator = num.charAt(0);
             operand = Double.parseDouble(num.substring(2));
             
             try {
                 performOperation(operator, operand);
             } catch (DivideByZeroException | UnknownOpException e) {
-                System.out.println(e.getMessage());
+                /*System.out.println(e.getMessage());
                 if (e instanceof DivideByZeroException) {
                     System.exit(0);
                 } else {
                     doCalculation();
                     return;
-                }
+                }*/
             }
         }
         System.out.println("계산기 프로그램을 종료합니다.");
     }
-
+    
     private void performOperation(char op, double operand) throws DivideByZeroException, UnknownOpException {
         switch (op) {
             case '+':

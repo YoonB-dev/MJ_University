@@ -13,7 +13,6 @@ public class oddGame extends JFrame{
 
     public oddGame(){
         setTitle("홀짝 맞추기 게임");
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(240,100);
         setLayout(new FlowLayout());
 

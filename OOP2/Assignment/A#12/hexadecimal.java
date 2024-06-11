@@ -3,7 +3,6 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 
 public class hexadecimal extends JFrame{
-    JTextField numField;
     JButton convertButton;
     JTextField textField;
     JLabel resultLabel;
